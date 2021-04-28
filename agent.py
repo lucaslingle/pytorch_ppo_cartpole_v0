@@ -10,9 +10,9 @@ class FullyConnectedAgent(tc.nn.Module):
 
         self.feature_stack = tc.nn.Sequential(
             tc.nn.Linear(self.observation_dim, self.num_features),
-            tc.nn.Tanh(),
+            tc.nn.ReLU(),
             tc.nn.Linear(self.num_features, self.num_features),
-            tc.nn.Tanh(),
+            tc.nn.ReLU(),
         )
         self.policy_head = tc.nn.Sequential(
             tc.nn.Linear(self.num_features, self.num_actions),
