@@ -209,7 +209,7 @@ class Runner:
         o_t = self.env.reset()
         total_reward = 0.0
 
-        for t in range(0, min(max_steps, 10000)):
+        for t in range(0, max_steps):
             self.env.render()
             pi_t, _ = agent(tc.Tensor(np.expand_dims(o_t, 0)))
             pi_t = pi_t.squeeze(0)

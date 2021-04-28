@@ -13,7 +13,7 @@ parser.add_argument('--ppo_epsilon', type=float, default=0.10, help='Clip param 
 parser.add_argument('--entropy_bonus_coef', type=float, default=0.0, help='Entropy bonus coefficient for PPO.')
 parser.add_argument('--checkpoint_dir', type=str, default='checkpoints', help='dir name for all checkpoints generated')
 parser.add_argument('--model_name', type=str, default='model', help='model name used for checkpoints')
-parser.add_argument('--max_steps', type=int, default=int(1000*128), help='Total number of environment steps to take.')
+parser.add_argument('--max_steps', type=int, default=int(4*1000*128), help='Total number of environment steps to take.')
 args = parser.parse_args()
 
 device = "cuda" if tc.cuda.is_available() else "cpu"
@@ -23,7 +23,7 @@ env = gym.make('CartPole-v0')
 
 agent = FullyConnectedAgent(
     observation_dim=4,
-    num_features=32,
+    num_features=128,
     num_actions=2
 )
 
