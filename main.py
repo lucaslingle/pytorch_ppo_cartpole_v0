@@ -4,7 +4,7 @@ from agent import FullyConnectedAgent
 from runner import Runner
 import argparse
 
-parser = argparse.ArgumentParser(description='Train an agent to play Breakout, using Proximal Policy Optimization')
+parser = argparse.ArgumentParser(description='Trains an agent to balance a pole on a cart, using Proximal Policy Optimization')
 parser.add_argument('--mode', choices=['train', 'play'], default='play', help='Mode of operation: train or play?')
 parser.add_argument('--lr', type=float, default=0.001, help='Adam stepsize parameter.')
 parser.add_argument('--gamma', type=float, default=0.99, help='Discount factor.')
